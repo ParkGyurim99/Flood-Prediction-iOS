@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A3930F9285CDD0200E48F9C /* Flood_PredictionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3930F8285CDD0200E48F9C /* Flood_PredictionApp.swift */; };
+		1A3930FB285CDD0200E48F9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3930FA285CDD0200E48F9C /* ContentView.swift */; };
+		1A3930FD285CDD0300E48F9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A3930FC285CDD0300E48F9C /* Assets.xcassets */; };
+		1A393100285CDD0300E48F9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A3930FF285CDD0300E48F9C /* Preview Assets.xcassets */; };
+		1A393108285CE17F00E48F9C /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 1A393107285CE17F00E48F9C /* CombineMoya */; };
+		1A39310A285CE17F00E48F9C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 1A393109285CE17F00E48F9C /* Moya */; };
+		1A39310D285CE2AE00E48F9C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1A39310C285CE2AE00E48F9C /* Kingfisher */; };
+		B7691FC15826E8954E8E59F6 /* Pods_Flood_Prediction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1C6C06BCDC71BAE7BDB11B /* Pods_Flood_Prediction.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		05357680C894EB0556AF7B5D /* Pods-Flood Prediction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flood Prediction.debug.xcconfig"; path = "Target Support Files/Pods-Flood Prediction/Pods-Flood Prediction.debug.xcconfig"; sourceTree = "<group>"; };
+		1A3930F5285CDD0200E48F9C /* Flood Prediction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flood Prediction.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A3930F8285CDD0200E48F9C /* Flood_PredictionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flood_PredictionApp.swift; sourceTree = "<group>"; };
+		1A3930FA285CDD0200E48F9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1A3930FC285CDD0300E48F9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A3930FF285CDD0300E48F9C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4B1C6C06BCDC71BAE7BDB11B /* Pods_Flood_Prediction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flood_Prediction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		928C3F38F48F2EB93256BD7C /* Pods-Flood Prediction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flood Prediction.release.xcconfig"; path = "Target Support Files/Pods-Flood Prediction/Pods-Flood Prediction.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A3930F2285CDD0200E48F9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A39310D285CE2AE00E48F9C /* Kingfisher in Frameworks */,
+				1A393108285CE17F00E48F9C /* CombineMoya in Frameworks */,
+				B7691FC15826E8954E8E59F6 /* Pods_Flood_Prediction.framework in Frameworks */,
+				1A39310A285CE17F00E48F9C /* Moya in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A3930EC285CDD0100E48F9C = {
+			isa = PBXGroup;
+			children = (
+				1A3930F7285CDD0200E48F9C /* Flood Prediction */,
+				1A3930F6285CDD0200E48F9C /* Products */,
+				C358E1053BA3444A695BA273 /* Pods */,
+				38139D7EFF2582AE46C1B969 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1A3930F6285CDD0200E48F9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A3930F5285CDD0200E48F9C /* Flood Prediction.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A3930F7285CDD0200E48F9C /* Flood Prediction */ = {
+			isa = PBXGroup;
+			children = (
+				1A3930F8285CDD0200E48F9C /* Flood_PredictionApp.swift */,
+				1A3930FA285CDD0200E48F9C /* ContentView.swift */,
+				1A3930FC285CDD0300E48F9C /* Assets.xcassets */,
+				1A3930FE285CDD0300E48F9C /* Preview Content */,
+			);
+			path = "Flood Prediction";
+			sourceTree = "<group>";
+		};
+		1A3930FE285CDD0300E48F9C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1A3930FF285CDD0300E48F9C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		38139D7EFF2582AE46C1B969 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B1C6C06BCDC71BAE7BDB11B /* Pods_Flood_Prediction.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C358E1053BA3444A695BA273 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05357680C894EB0556AF7B5D /* Pods-Flood Prediction.debug.xcconfig */,
+				928C3F38F48F2EB93256BD7C /* Pods-Flood Prediction.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A3930F4285CDD0200E48F9C /* Flood Prediction */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A393103285CDD0300E48F9C /* Build configuration list for PBXNativeTarget "Flood Prediction" */;
+			buildPhases = (
+				D7AF1B24AFCBFFB12CF38831 /* [CP] Check Pods Manifest.lock */,
+				1A3930F1285CDD0200E48F9C /* Sources */,
+				1A3930F2285CDD0200E48F9C /* Frameworks */,
+				1A3930F3285CDD0200E48F9C /* Resources */,
+				BA8AE7147AC5E7A4CEC866A1 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Flood Prediction";
+			packageProductDependencies = (
+				1A393107285CE17F00E48F9C /* CombineMoya */,
+				1A393109285CE17F00E48F9C /* Moya */,
+				1A39310C285CE2AE00E48F9C /* Kingfisher */,
+			);
+			productName = "Flood Prediction";
+			productReference = 1A3930F5285CDD0200E48F9C /* Flood Prediction.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A3930ED285CDD0100E48F9C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					1A3930F4285CDD0200E48F9C = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 1A3930F0285CDD0100E48F9C /* Build configuration list for PBXProject "Flood Prediction" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1A3930EC285CDD0100E48F9C;
+			packageReferences = (
+				1A393106285CE17F00E48F9C /* XCRemoteSwiftPackageReference "Moya" */,
+				1A39310B285CE2AE00E48F9C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
+			productRefGroup = 1A3930F6285CDD0200E48F9C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A3930F4285CDD0200E48F9C /* Flood Prediction */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A3930F3285CDD0200E48F9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A393100285CDD0300E48F9C /* Preview Assets.xcassets in Resources */,
+				1A3930FD285CDD0300E48F9C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BA8AE7147AC5E7A4CEC866A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flood Prediction/Pods-Flood Prediction-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flood Prediction/Pods-Flood Prediction-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flood Prediction/Pods-Flood Prediction-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7AF1B24AFCBFFB12CF38831 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flood Prediction-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A3930F1285CDD0200E48F9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A3930FB285CDD0200E48F9C /* ContentView.swift in Sources */,
+				1A3930F9285CDD0200E48F9C /* Flood_PredictionApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1A393101285CDD0300E48F9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1A393102285CDD0300E48F9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1A393104285CDD0300E48F9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05357680C894EB0556AF7B5D /* Pods-Flood Prediction.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Flood Prediction/Preview Content\"";
+				DEVELOPMENT_TEAM = ZKRH5N6RGG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "personal.parkgyurim.development.Flood-Prediction";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1A393105285CDD0300E48F9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 928C3F38F48F2EB93256BD7C /* Pods-Flood Prediction.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Flood Prediction/Preview Content\"";
+				DEVELOPMENT_TEAM = ZKRH5N6RGG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "personal.parkgyurim.development.Flood-Prediction";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A3930F0285CDD0100E48F9C /* Build configuration list for PBXProject "Flood Prediction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A393101285CDD0300E48F9C /* Debug */,
+				1A393102285CDD0300E48F9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A393103285CDD0300E48F9C /* Build configuration list for PBXNativeTarget "Flood Prediction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A393104285CDD0300E48F9C /* Debug */,
+				1A393105285CDD0300E48F9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1A393106285CE17F00E48F9C /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		1A39310B285CE2AE00E48F9C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1A393107285CE17F00E48F9C /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A393106285CE17F00E48F9C /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		1A393109285CE17F00E48F9C /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A393106285CE17F00E48F9C /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		1A39310C285CE2AE00E48F9C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A39310B285CE2AE00E48F9C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1A3930ED285CDD0100E48F9C /* Project object */;
+}
