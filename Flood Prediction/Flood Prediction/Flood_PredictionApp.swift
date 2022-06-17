@@ -11,7 +11,7 @@ import SwiftUI
 struct Flood_PredictionApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
