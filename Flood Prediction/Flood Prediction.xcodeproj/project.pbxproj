@@ -34,6 +34,7 @@
 		1A393117285CED6500E48F9C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		1A393119285CEF5A00E48F9C /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		1A39311B285CEFC600E48F9C /* District.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = District.swift; sourceTree = "<group>"; };
+		1A39311D285CFE0D00E48F9C /* Flood-Prediction-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Flood-Prediction-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4B1C6C06BCDC71BAE7BDB11B /* Pods_Flood_Prediction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flood_Prediction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		928C3F38F48F2EB93256BD7C /* Pods-Flood Prediction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flood Prediction.release.xcconfig"; path = "Target Support Files/Pods-Flood Prediction/Pods-Flood Prediction.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +75,7 @@
 		1A3930F7285CDD0200E48F9C /* Flood Prediction */ = {
 			isa = PBXGroup;
 			children = (
+				1A39311D285CFE0D00E48F9C /* Flood-Prediction-Info.plist */,
 				1A3930F8285CDD0200E48F9C /* Flood_PredictionApp.swift */,
 				1A393111285CE6CD00E48F9C /* Service */,
 				1A39310E285CE69F00E48F9C /* Model */,
@@ -414,6 +416,7 @@
 				DEVELOPMENT_TEAM = ZKRH5N6RGG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Flood-Prediction-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -428,7 +431,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -444,6 +447,7 @@
 				DEVELOPMENT_TEAM = ZKRH5N6RGG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Flood-Prediction-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -458,7 +462,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

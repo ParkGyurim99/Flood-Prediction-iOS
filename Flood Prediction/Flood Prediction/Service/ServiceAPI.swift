@@ -13,7 +13,7 @@ struct ServiceAPI {
 }
 
 enum UserAPI {
-    case LogIn(oAuthProvider : String, accessToken : String)
+    case LogIn(oAuthProvider : OAuthProvider, accessToken : String)
     case refreshToken
 }
 
@@ -27,7 +27,7 @@ extension UserAPI : TargetType {
     
     var path: String {
         switch self {
-            case .LogIn(oAuthProvider: let type, accessToken: _) : return "/login/oauth/" + type
+            case .LogIn(oAuthProvider: let type, accessToken: _) : return "/login/oauth/" + type.rawValue
             case .refreshToken : return "/token"
         }
     }
@@ -43,14 +43,17 @@ extension UserAPI : TargetType {
         switch self {
             case .LogIn(oAuthProvider: _, accessToken: let accessToken) :
                 let params : [String: String] = [ "accessToken" : accessToken ]
-                return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
+                return .requestParameters(parameters: params, encoding: URLEncoding.default )
             case .refreshToken : return .requestPlain
         }
     }
     
     var headers: [String : String]? {
         switch self {
-            case .refreshToken : return [ "Content-type": "application/json", "X-AUTH-TOKEN" : "" ]
+            case .refreshToken :
+                guard let userInfo = UserService.shared.userInfo else { return [ "Content-type": "application/json" ] }
+                return [ "Content-type": "application/json",
+                         "X-AUTH-TOKEN" : userInfo.token.tokenType + " " + userInfo.token.accessToken ]
             case .LogIn(oAuthProvider: _, accessToken: _) : return [ "Content-type": "application/json" ]
         }
     }

@@ -14,11 +14,13 @@ final class MainViewModel : ObservableObject {
     @Published var prediction : PredictionInfo?
     @Published var predictionStatus : PredictionStatus = .none
     
-    private let dataProvider = MoyaProvider<DataAPI>()
+    @Published var showLogInModal : Bool = false
+    
+    private let provider = MoyaProvider<DataAPI>()
     private var subscription = Set<AnyCancellable>()
     
     func getPredictionData() {
-        dataProvider.requestPublisher(.getPrediction)
+        provider.requestPublisher(.getPrediction)
             .sink { completion in
                 switch completion {
                     case let .failure(error) :

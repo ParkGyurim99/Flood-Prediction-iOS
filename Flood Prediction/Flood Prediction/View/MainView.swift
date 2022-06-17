@@ -31,7 +31,7 @@ struct MainView : View {
                 Text("Contents")
             }.toolbar {
                 Button {
-                    
+                    viewModel.showLogInModal.toggle()
                 } label : {
                     HStack(spacing : 5) {
                         Image(systemName: "person.circle")
@@ -40,6 +40,31 @@ struct MainView : View {
                     }.foregroundColor(.gray)
                 }
             }
+            .background(
+                NavigationLink(isActive : $viewModel.showLogInModal) {
+                    VStack {
+                        Text("LogIn with")
+                        Button {
+                            UserService.shared.kakaoLogin()
+                        } label : {
+                            Image("kakao_login")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .cornerRadius(20)
+                        }.frame(maxWidth : .infinity)
+                        
+                        // Naver Login
+                        Button {
+                            UserService.shared.naverLogin()
+                        } label : {
+                            Image("naver_login")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .cornerRadius(20)
+                        }.frame(maxWidth : .infinity)
+                    }.padding()
+                } label : {}
+            )
         }
     }
 }
