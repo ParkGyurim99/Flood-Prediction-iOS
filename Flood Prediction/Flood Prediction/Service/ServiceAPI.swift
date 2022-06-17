@@ -9,11 +9,11 @@ import Foundation
 import Moya
 
 struct ServiceAPI {
-    static let baseURL : String = ""
+    static let baseURL : String = "http://49.50.161.92:8081"
 }
 
 enum UserAPI {
-    case LogIn(provider : String, accessToken : String)
+    case LogIn(oAuthProvider : String, accessToken : String)
     case refreshToken
 }
 
@@ -27,21 +27,21 @@ extension UserAPI : TargetType {
     
     var path: String {
         switch self {
-            case .LogIn(provider: let type, accessToken: _) : return "/login/oauth/" + type
+            case .LogIn(oAuthProvider: let type, accessToken: _) : return "/login/oauth/" + type
             case .refreshToken : return "/token"
         }
     }
     
     var method: Moya.Method {
         switch self {
-            case .LogIn(provider: _, accessToken: _) : return .post
+            case .LogIn(oAuthProvider: _, accessToken: _) : return .post
             case .refreshToken : return .get
         }
     }
     
     var task: Task {
         switch self {
-            case .LogIn(provider: _, accessToken: let accessToken) :
+            case .LogIn(oAuthProvider: _, accessToken: let accessToken) :
                 let params : [String: String] = [ "accessToken" : accessToken ]
                 return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
             case .refreshToken : return .requestPlain
@@ -51,7 +51,7 @@ extension UserAPI : TargetType {
     var headers: [String : String]? {
         switch self {
             case .refreshToken : return [ "Content-type": "application/json", "X-AUTH-TOKEN" : "" ]
-            case .LogIn(provider: _, accessToken: _) : return [ "Content-type": "application/json" ]
+            case .LogIn(oAuthProvider: _, accessToken: _) : return [ "Content-type": "application/json" ]
         }
     }
     
