@@ -13,18 +13,10 @@ import KakaoSDKUser
 @main
 struct Flood_PredictionApp: App {
     init() {
-        // --------------------- //
-        // ----- INIT SDKs ----- //
-        // --------------------- //
-        
-        // Kakao SDK
+        // INIT Kakao SDK
         KakaoSDK.initSDK(appKey: "5999200bd2791859bfa2ab7f781dcf89")
 
-        // --------------------- //
-        // ----- AutoLogin ----- //
-        // --------------------- //
-        
-        // Check Kakao accessToken
+        // Check Kakao accessToken is available and then login with access token
         if (AuthApi.hasToken()) {
             UserApi.shared.accessTokenInfo { (_, error) in
                 if let error = error {

@@ -21,7 +21,7 @@ enum OAuthProvider : String {
 
 protocol UserServiceProtocol {
     func oAuthLogIn(oAuthProvider: OAuthProvider, accessToken: String)
-    func refreshToken()
+    func refreshToken(completion : @escaping (Result<Bool, Error>) -> ())
     func kakaoLogin()
     func logout()
     func unlink()
@@ -52,7 +52,25 @@ class UserService : NSObject, ObservableObject, UserServiceProtocol {
             }.store(in : &subscription)
     }
     
-    func refreshToken() { }
+    func refreshToken(completion: @escaping (Result<Bool, Error>) -> ()) {
+        provider.requestPublisher(.refreshToken)
+            .sink { completion in
+                switch completion {
+                    case let .failure(error) :
+                        print("Refresh Token Error : " + error.localizedDescription)
+                    case .finished :
+                        print("Refresh Token Finished")
+                }
+            } receiveValue: { recievedValue in
+                if let token = try? recievedValue.map(Token.self) {
+                    print("Refresh token success")
+                    UserService.shared.userInfo?.token = token
+                    completion(.success(true))
+                } else {
+                    completion(.success(false))
+                }
+            }.store(in : &subscription)
+    }
     
     func kakaoLogin() {
         if (UserApi.isKakaoTalkLoginAvailable()) {
