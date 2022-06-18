@@ -33,7 +33,7 @@ class UserService : NSObject, ObservableObject, UserServiceProtocol {
     @Published var userInfo : OAuthLoginResponse?
     @Published var loginType : OAuthProvider?
     
-    private let provider = MoyaProvider<UserAPI>()
+    private let provider = MoyaProvider<UserAPI>() // >(session : Moya.Session(interceptor: Interceptor()))
     private var subscription = Set<AnyCancellable>()
     
     func oAuthLogIn(oAuthProvider: OAuthProvider, accessToken: String) {
