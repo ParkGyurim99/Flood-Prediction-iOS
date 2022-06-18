@@ -20,6 +20,7 @@
 		1A39311A285CEF5A00E48F9C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A393119285CEF5A00E48F9C /* UserService.swift */; };
 		1A39311C285CEFC600E48F9C /* District.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A39311B285CEFC600E48F9C /* District.swift */; };
 		1A39311F285DBE4600E48F9C /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A39311E285DBE4600E48F9C /* RequestInterceptor.swift */; };
+		1A393122285DE66900E48F9C /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A393121285DE66900E48F9C /* Color+Extension.swift */; };
 		B7691FC15826E8954E8E59F6 /* Pods_Flood_Prediction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1C6C06BCDC71BAE7BDB11B /* Pods_Flood_Prediction.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		1A39311B285CEFC600E48F9C /* District.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = District.swift; sourceTree = "<group>"; };
 		1A39311D285CFE0D00E48F9C /* Flood-Prediction-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Flood-Prediction-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1A39311E285DBE4600E48F9C /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
+		1A393121285DE66900E48F9C /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		4B1C6C06BCDC71BAE7BDB11B /* Pods_Flood_Prediction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flood_Prediction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		928C3F38F48F2EB93256BD7C /* Pods-Flood Prediction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flood Prediction.release.xcconfig"; path = "Target Support Files/Pods-Flood Prediction/Pods-Flood Prediction.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +81,7 @@
 			children = (
 				1A39311D285CFE0D00E48F9C /* Flood-Prediction-Info.plist */,
 				1A3930F8285CDD0200E48F9C /* Flood_PredictionApp.swift */,
+				1A393120285DE65C00E48F9C /* Extension */,
 				1A393111285CE6CD00E48F9C /* Service */,
 				1A39310E285CE69F00E48F9C /* Model */,
 				1A393110285CE6B200E48F9C /* View */,
@@ -101,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				1A39311B285CEFC600E48F9C /* District.swift */,
-				1A393112285CE6F300E48F9C /* ResponseData */,
+				1A393115285CEB8000E48F9C /* ResponseData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -132,12 +135,12 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		1A393112285CE6F300E48F9C /* ResponseData */ = {
+		1A393120285DE65C00E48F9C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				1A393115285CEB8000E48F9C /* ResponseData.swift */,
+				1A393121285DE66900E48F9C /* Color+Extension.swift */,
 			);
-			path = ResponseData;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		38139D7EFF2582AE46C1B969 /* Frameworks */ = {
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A393118285CED6500E48F9C /* MainViewModel.swift in Sources */,
+				1A393122285DE66900E48F9C /* Color+Extension.swift in Sources */,
 				1A3930FB285CDD0200E48F9C /* MainView.swift in Sources */,
 				1A39311A285CEF5A00E48F9C /* UserService.swift in Sources */,
 				1A39311F285DBE4600E48F9C /* RequestInterceptor.swift in Sources */,

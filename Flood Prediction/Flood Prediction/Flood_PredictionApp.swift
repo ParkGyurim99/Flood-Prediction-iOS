@@ -36,12 +36,14 @@ struct Flood_PredictionApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainView()
-                .onOpenURL { url in
-                    if AuthApi.isKakaoTalkLoginUrl(url) {
-                        _ = AuthController.handleOpenUrl(url: url)
+            NavigationView {
+                MainView()
+                    .onOpenURL { url in
+                        if AuthApi.isKakaoTalkLoginUrl(url) {
+                            _ = AuthController.handleOpenUrl(url: url)
+                        }
                     }
-                }
+            }
         }
     }
 }
