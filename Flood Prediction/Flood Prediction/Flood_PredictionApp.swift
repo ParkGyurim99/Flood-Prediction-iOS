@@ -9,7 +9,6 @@ import SwiftUI
 import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
-import NaverThirdPartyLogin
 
 @main
 struct Flood_PredictionApp: App {
@@ -20,18 +19,7 @@ struct Flood_PredictionApp: App {
         
         // Kakao SDK
         KakaoSDK.initSDK(appKey: "5999200bd2791859bfa2ab7f781dcf89")
-        
-        // Naver SDK
-        NaverThirdPartyLoginConnection.getSharedInstance()?.isNaverAppOauthEnable = true // 네이버 앱으로 로그인 허용
-        NaverThirdPartyLoginConnection.getSharedInstance()?.isInAppOauthEnable = true // 브라우저 로그인 허용
-        
-        NaverThirdPartyLoginConnection.getSharedInstance().setOnlyPortraitSupportInIphone(true)
-        
-        NaverThirdPartyLoginConnection.getSharedInstance().serviceUrlScheme = kServiceAppUrlScheme
-        NaverThirdPartyLoginConnection.getSharedInstance().consumerKey = kConsumerKey
-        NaverThirdPartyLoginConnection.getSharedInstance().consumerSecret = kConsumerSecret
-        NaverThirdPartyLoginConnection.getSharedInstance().appName = kServiceAppName
-        
+
         // --------------------- //
         // ----- AutoLogin ----- //
         // --------------------- //
@@ -52,20 +40,6 @@ struct Flood_PredictionApp: App {
                 }
             }
         }
-        
-        // Check Naver accessToken
-        if NaverThirdPartyLoginConnection.getSharedInstance().isValidAccessTokenExpireTimeNow() {
-            //print("NAVER TOKEN EXPIRED IN")
-            //print(NaverThirdPartyLoginConnection.getSharedInstance().accessTokenExpireDate)
-            
-            print("Login with Naver")
-            
-            UserService.shared.loginType = .naver
-            UserService.shared.oAuthLogIn(oAuthProvider: .naver, accessToken: NaverThirdPartyLoginConnection.getSharedInstance().accessToken)
-        }
-//        else {
-//            NaverThirdPartyLoginConnection.getSharedInstance().requestAccessTokenWithRefreshToken()
-//        }
     }
     
     var body: some Scene {
@@ -74,9 +48,6 @@ struct Flood_PredictionApp: App {
                 .onOpenURL { url in
                     if AuthApi.isKakaoTalkLoginUrl(url) {
                         _ = AuthController.handleOpenUrl(url: url)
-                    } else if NaverThirdPartyLoginConnection.getSharedInstance().isNaverThirdPartyLoginAppschemeURL(url) {
-                        print("Received URL :", url)
-                        NaverThirdPartyLoginConnection.getSharedInstance().receiveAccessToken(url)
                     }
                 }
         }

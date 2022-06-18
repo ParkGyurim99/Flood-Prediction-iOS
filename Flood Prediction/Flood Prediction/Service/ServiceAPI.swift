@@ -54,7 +54,8 @@ extension UserAPI : TargetType {
                 guard let userInfo = UserService.shared.userInfo else { return [ "Content-type": "application/json" ] }
                 return [ "Content-type": "application/json",
                          "X-AUTH-TOKEN" : userInfo.token.tokenType + " " + userInfo.token.accessToken ]
-            case .LogIn(oAuthProvider: _, accessToken: _) : return [ "Content-type": "application/json" ]
+            case .LogIn(oAuthProvider: _, accessToken: _) : return nil
+                                                            //return [ "Content-type": "application/json" ]
         }
     }
     

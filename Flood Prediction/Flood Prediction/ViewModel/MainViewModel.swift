@@ -30,7 +30,7 @@ final class MainViewModel : ObservableObject {
                 }
             } receiveValue: { [weak self] recievedValue in
                 guard let responseData = try? recievedValue.map(DataResponse<PredictionInfo>.self) else { return }
-                //print(responseData)
+                print(responseData)
                 self?.prediction = responseData.body
             }.store(in : &subscription)
     }

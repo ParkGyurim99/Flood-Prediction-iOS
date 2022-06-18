@@ -13,7 +13,6 @@ import Combine
 import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
-import NaverThirdPartyLogin
 
 enum OAuthProvider : String {
     case naver
@@ -24,7 +23,6 @@ protocol UserServiceProtocol {
     func oAuthLogIn(oAuthProvider: OAuthProvider, accessToken: String)
     func refreshToken()
     func kakaoLogin()
-    func naverLogin()
     func logout()
     func unlink()
 }
@@ -73,22 +71,10 @@ class UserService : NSObject, ObservableObject, UserServiceProtocol {
                 }
             }
         } else {
-            // Appstore에서 카카오톡 열기
             if let url = URL(string: "itms-apps://itunes.apple.com/app/id362057947"), UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:])
             }
         }
-    }
-    
-    func naverLogin() {
-//        if NaverThirdPartyLoginConnection
-//            .getSharedInstance()
-//            .isPossibleToOpenNaverApp() // Naver App이 깔려있는지 확인하는 함수
-//        { }
-        NaverThirdPartyLoginConnection.getSharedInstance().delegate = self
-        NaverThirdPartyLoginConnection
-            .getSharedInstance()
-            .requestThirdPartyLogin()
     }
     
     func logout() {
@@ -104,13 +90,6 @@ class UserService : NSObject, ObservableObject, UserServiceProtocol {
                             self.userInfo = nil
                         }
                     }
-                }
-            case .naver :
-                NaverThirdPartyLoginConnection.getSharedInstance().resetToken()
-                print("Naver account logout() success.")
-                withAnimation {
-                    self.loginType = nil
-                    self.userInfo = nil
                 }
             default : print("Unknown login type")
         }
@@ -130,41 +109,8 @@ class UserService : NSObject, ObservableObject, UserServiceProtocol {
                         }
                     }
                 }
-            case .naver :
-                NaverThirdPartyLoginConnection.getSharedInstance().requestDeleteToken()
-                print("Naver account unlink() success.")
-                withAnimation {
-                    self.loginType = nil
-                    self.userInfo = nil
-                }
             default : print("Unknown login type")
         }
     }
 
-}
-
-// Naver Login Delegate - call back
-extension UserService : UIApplicationDelegate, NaverThirdPartyLoginConnectionDelegate {
-    // 로그인에 성공했을 경우 호출
-    func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
-        print("[Success] : Success Naver Login")
-        
-        loginType = .naver
-        oAuthLogIn(oAuthProvider: .naver, accessToken: NaverThirdPartyLoginConnection.getSharedInstance().accessToken)
-    }
-    
-    // 접근 토큰 갱신
-    func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
-        print("[Success] : Success Naver AccessToken Refresh")
-    }
-    
-    // 연동해제 할 경우 호출(토큰 삭제)
-    func oauth20ConnectionDidFinishDeleteToken() {
-        print("[Success] : Success Naver Logout")
-    }
-    
-    // 모든 Error
-    func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
-        print("[Error] :", error.localizedDescription)
-    }
 }

@@ -52,16 +52,6 @@ struct MainView : View {
                                 .aspectRatio(contentMode: .fit)
                                 .cornerRadius(20)
                         }.frame(maxWidth : .infinity)
-                        
-                        // Naver Login
-                        Button {
-                            UserService.shared.naverLogin()
-                        } label : {
-                            Image("naver_login")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .cornerRadius(20)
-                        }.frame(maxWidth : .infinity)
                     }.padding()
                 } label : {}
             )
