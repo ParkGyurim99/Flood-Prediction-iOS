@@ -30,7 +30,7 @@ final class MainViewModel : ObservableObject {
     var predictionColor : Color {
         switch predictionStatus {
             case .none : return .gray.opacity(0.7)
-            case .danger : return .red.opacity(0.7)
+            case .danger : return .yellow.opacity(0.7)
             case .safe : return .green.opacity(0.7)
         }
     }
@@ -58,5 +58,13 @@ final class MainViewModel : ObservableObject {
     func getPredictionStatus(district : District) {
         if let prediction = prediction { predictionStatus = district.getPrediction(prediction) }
         else { predictionStatus = .none }
+    }
+    
+    func getDate() -> String{
+        let time = Date()
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "YYYY.MM.dd. a hh"
+        let stringDate = timeFormatter.string(from: time)
+        return stringDate
     }
 }

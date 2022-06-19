@@ -11,14 +11,6 @@ struct MainView : View {
     @AppStorage("District") var selectedDistrict : District = .none
     @StateObject private var viewModel = MainViewModel()
     
-    func getDate() -> String{
-        let time = Date()
-        let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "YYYY.MM.dd. hh:mm a"
-        let stringDate = timeFormatter.string(from: time)
-        return stringDate
-    }
-    
     var Location : some View {
         VStack {
             Button {
@@ -43,57 +35,104 @@ struct MainView : View {
     
     var PredictionInformation : some View {
         VStack(alignment : .trailing) {
-            Text(getDate() + " 기준")
+            NavigationLink(destination : Text("")) {
+                Text("인근 지역 정보")
+                Image(systemName : "chevron.right")
+            }.font(.subheadline)
                 .foregroundColor(.gray)
                 .padding(.horizontal)
-                .font(.subheadline)
-            Text(viewModel.predictionTitle)
-                .padding()
-                .frame(maxWidth : .infinity)
-                .background(viewModel.predictionColor)
-                .cornerRadius(10)
-                .padding()
-                .overlay(Color.gray.opacity(viewModel.fetchPredictionDone ? 0 : 1))
-
-            HStack {
-                NavigationLink(destination : Text("")) {
-                    Text("인근 지역 정보")
-                        .foregroundColor(.gray)
-                    Image(systemName : "chevron.right")
-                }.font(.subheadline)
-                .padding(.horizontal)
-                
-                Spacer()
-                
-                Button {
-                    
-                } label : {
-                    HStack {
-                        Text("새로고침")
-                        Image(systemName: "arrow.clockwise.circle.fill")
-                    }.foregroundColor(.gray)
-                    .padding(.horizontal)
-                }
-            }
             
-            Divider()
+            Text(viewModel.predictionTitle)
+                .font(.headline)
+                .padding()
+                .frame(width : 150, height : 150)
+                .background(viewModel.predictionColor)
+                .cornerRadius(150)
+                .overlay(
+                    Color.gray.opacity(viewModel.fetchPredictionDone ? 0 : 1)
+                        .cornerRadius(150)
+                )
+                .shadow(radius: 2)
+                .frame(maxWidth : .infinity, alignment: .center)
+                .padding()
+
+            Button {
+                
+            } label : {
+                HStack(spacing : 5) {
+                    Text(viewModel.getDate() + "시 기준")
+                        .font(.subheadline)
+                    Image(systemName: "arrow.clockwise.circle.fill")
+                }.foregroundColor(.gray)
+                    .padding(.horizontal)
+            }
         }.onChange(of: selectedDistrict) { viewModel.getPredictionStatus(district: $0) }
     }
     
     var RelatedInformation : some View {
         VStack {
-            Text("View More")
-            
-            Divider()
-        }.padding()
-    }
-    
-    var ContactInformation : some View {
-        VStack {
-            Text("Number #1")
-            Text("Number #2")
-            Text("Number #3")
-        }.padding()
+            List {
+                Section(header: HStack {
+                                    Text("관련 기사 및 교육 정보")
+                                    Spacer()
+                                    Button("더보기") { }.foregroundColor(.gray)
+                                }
+                ) {
+                    ForEach(RelatedData.dummies, id : \.self) { data in
+                        HStack {
+                            Text(data.title)
+                                .fontWeight(.semibold)
+                                .lineLimit(1)
+                                .font(.callout)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                        }
+                    }
+                }
+                
+                Section(header: Text("관련 기사 및 교육 정보")) {
+                    Button {
+                        guard let url = URL(string: "tel://044-205-5233") else { return }
+                        UIApplication.shared.open(url)
+                    } label : {
+                        HStack {
+                            Text("행정안전부 자연재난대응과")
+                                .font(.callout)
+                                .fontWeight(.semibold)
+                            
+                            Spacer()
+                            Image(systemName: "phone.fill")
+                        }
+                    }
+                    
+                    Button {
+                        guard let url = URL(string: "tel://053-230-6402") else { return }
+                        UIApplication.shared.open(url)
+                    } label : {
+                        HStack {
+                            Text("환경부 대구지방환경청")
+                                .font(.callout)
+                                .fontWeight(.semibold)
+                            Spacer()
+                            Image(systemName: "phone.fill")
+                        }
+                    }
+                    
+                    Button {
+                        guard let url = URL(string: "tel://119") else { return }
+                        UIApplication.shared.open(url)
+                    } label : {
+                        HStack {
+                            Text("119 안전신고센터")
+                                .font(.callout)
+                                .fontWeight(.semibold)
+                            Spacer()
+                            Image(systemName: "phone.fill")
+                        }
+                    }
+                }
+            }.listStyle(.plain)
+        }//.padding(.top)
     }
     
     var body: some View {
@@ -101,8 +140,8 @@ struct MainView : View {
             VStack {
                 Location
                 PredictionInformation
+                //Spacer().frame(height: UIScreen.main.bounds.height * 0.2)
                 RelatedInformation
-                ContactInformation
                 
                 Spacer()
             }.toolbar {
@@ -172,6 +211,13 @@ struct MainView : View {
                 .transition(.move(edge: .bottom))
             }
         }.edgesIgnoringSafeArea(.bottom)
+        .background(Color.systemDefaultGray)
+        .onTapGesture {
+            withAnimation {
+                viewModel.showLogInModal = false
+                viewModel.showDistrictSelector = false
+            }
+        }
         .navigationBarTitleDisplayMode(.inline)
         .onAppear { viewModel.getPredictionData() }
         .onChange(of: viewModel.fetchPredictionDone) { _ in

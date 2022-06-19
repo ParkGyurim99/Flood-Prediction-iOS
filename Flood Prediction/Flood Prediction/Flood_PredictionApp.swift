@@ -38,6 +38,7 @@ struct Flood_PredictionApp: App {
         WindowGroup {
             NavigationView {
                 MainView()
+                    .preferredColorScheme(.light)
                     .onOpenURL { url in
                         if AuthApi.isKakaoTalkLoginUrl(url) {
                             _ = AuthController.handleOpenUrl(url: url)
